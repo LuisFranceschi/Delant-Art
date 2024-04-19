@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
+body {
+    background: linear-gradient(to right, #2a5298, #1e3c72); /* Updated gradient */
+    color: #ffffff; /* Ensure text color is readable on the new background */
+    font-family: 'Helvetica'; /* This is optional if you want to change the font */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*panel*/
+.panel {
+    border: none;
+    box-shadow: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.panel-heading {
+    border-color:#eff2f7 ;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.panel-title {
+    color: #ffffff; /* Updated to contrast against the darker background */
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: 'Helvetica';
+}
+
+/*product list*/
+.prod-cat li a{
+    border-bottom: 1px dashed #d9d9d9;
+}
+
+.prod-cat li a {
+    color: #ffffff; /* Updated for better visibility */
+}
+
+.prod-cat li ul {
+    margin-left: 30px;
+}
+
+.prod-cat li ul li a{
+    border-bottom:none;
+}
+.prod-cat li ul li a:hover,.prod-cat li ul li a:focus, .prod-cat li ul li.active a , .prod-cat li a:hover,.prod-cat li a:focus, .prod-cat li a.active{
+    background: none;
+    color: #ff7261;
+}
+
+.pro-lab{
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+.pro-sort {
+    padding-right: 20px;
+    float: left;
+}
+
+.pro-page-list {
+    margin: 5px 0 0 0;
+}
+
+.product-list img{
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.product-list .pro-img-box {
+    position: relative;
+}
+.adtocart {
+    background: #fc5959;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid #fff;
+    left: 45%;
+    bottom: -25px;
+    position: absolute;
+}
+
+.adtocart i{
+    color: #fff;
+    font-size: 25px;
+    line-height: 42px;
+}
+
+.pro-title {
+    color: #5A5A5A; /* Consider changing if it's hard to read on the new background */
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.product-list .price {
+    color:#fc5959 ;
+    font-size: 15px;
+}
+
+.pro-img-details {
+    margin-left: -15px;
+}
+
+.pro-img-details img {
+    width: 100%;
+}
+
+.pro-d-title {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.product_meta {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+.product_meta span {
+    display: block;
+    margin-bottom: 10px;
+}
+.product_meta a, .pro-price{
+    color:#fc5959 ;
+}
+
+.pro-price, .amount-old {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.amount-old {
+    text-decoration: line-through;
+}
+
+.quantity {
+    width: 120px;
+}
+
+.pro-img-list {
+    margin: 10px 0 0 -15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.pro-img-list a {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.pro-d-head {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.card-title {
+  color: #0056b3; /* Ensure this is visible on your card background */
+}
+
+.card.product-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for transform and shadow */
+    background-color: #fff; /* Base background color for contrast */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .card.product-card:hover {
+    border: 2px solid red;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
+    background-color: #f8f9fa; /* Slight background color change on hover */
   }
-  to {
-    transform: rotate(360deg);
+  
+  
+  /* Ensure text and other elements are visible against the background */
+  .card.product-card .card-title,
+  .card.product-card .card-text,
+  .card.product-card .btn {
+    color: #333; /* Adjust color for readability */
   }
+  
+  /* Additional styles for Bootstrap conflicts or adjustments */
+  .card.product-card .btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border-color: #007bff; /* Consistent with Bootstrap theming */
+  }
+  
+  .card.product-card .form-control {
+    box-shadow: none !important; /* Removing Bootstrap shadow on focus */
+  }
+  .product-card img {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
+
+.product-card img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+.product-card .card-img-top {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.product-card .card-img-top:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+  
